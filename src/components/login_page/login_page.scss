@@ -1,0 +1,16 @@
+.hero-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 40%;
+  width: 100%;
+  align-items: center;
+
+  img {
+    width: 340px;
+  }
+  #login-btn {
+    margin: 20% 0;
+  }
+}

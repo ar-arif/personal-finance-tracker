@@ -1,0 +1,11 @@
+#app {
+  width: 300px;
+  border: 1px solid black;
+  font-family: roboto !important;
+}
+
+@media (max-width: 600px) {
+  #app {
+    width: 100%;
+  }
+}
