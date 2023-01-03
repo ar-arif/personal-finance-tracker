@@ -20,6 +20,10 @@ export default function AddExpense() {
   const [dailyExpense, setDailyExpense] = useState("0");
   const [sst, setSST] = useState("0");
   const [lst, setLST] = useState("0");
+  const [inputExpenseAmmount, setInputExpenseAmmount] = useState(Number);
+  const [expenseAmmount, setExpenseAmmount] = useState(Number);
+  const [categoryValue, setCategoryValue] = useState("");
+  const [category, setCategory] = useState("");
   function calculateSalary() {
     let calc_expandable: any = (inputSalary / 100) * 70;
     let calc_dailylimit: any = calc_expandable / 30;
@@ -33,6 +37,11 @@ export default function AddExpense() {
     );
     setSST(calc_sst.toLocaleString("en-IN", { minimumFractionDigits: 2 }));
     setLST(calc_lst.toLocaleString("en-IN", { minimumFractionDigits: 2 }));
+  }
+  function calculateAddExpense() {
+    setCategory(categoryValue);
+    let exp_amnt = parseInt(inputExpenseAmmount);
+    setExpenseAmmount(exp_amnt.toLocaleString("en-IN"));
   }
   return (
     <div id="add_expense">
@@ -86,19 +95,25 @@ export default function AddExpense() {
           <span className="inp">
             <TextField
               id="outlined-basic"
-              label="Expense Ammount"
+              label="Expense Amount"
               variant="outlined"
               className="inp"
               type={"number"}
+              value={inputExpenseAmmount}
+              onChange={(e) => setInputExpenseAmmount(e.target.value)}
             />
           </span>
-          <ExpenseCategory />
-          <Button variant="outlined" color="primary">
+          <ExpenseCategory setCategoryValue={setCategoryValue} />
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={() => calculateAddExpense()}
+          >
             Expense
           </Button>
         </div>
         <div className="expense-data-container">
-          <ExpenseData />
+          <ExpenseData category={category} ammount={expenseAmmount} />
         </div>
       </div>
     </div>

@@ -5,11 +5,12 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-export default function ExpenseCategory() {
+export default function ExpenseCategory({ setCategoryValue }) {
   const [category, setCategory] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setCategory(event.target.value as string);
+    setCategoryValue(event.target.value as string);
   };
   return (
     <div id="expense-category-component">
