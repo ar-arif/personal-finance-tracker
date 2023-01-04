@@ -41,6 +41,7 @@ export default function AddExpense() {
   function calculateAddExpense() {
     setCategory(categoryValue);
     let exp_amnt = parseInt(inputExpenseAmmount);
+    setDailyExpense(parseInt(dailyExpense) + exp_amnt);
     setExpenseAmmount(exp_amnt.toLocaleString("en-IN"));
   }
   return (

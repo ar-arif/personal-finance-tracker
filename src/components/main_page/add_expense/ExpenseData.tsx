@@ -10,12 +10,9 @@ export default function ExpenseData({ category, ammount }) {
   const dateString = today.toLocaleDateString("en-IN", options);
 
   const [listExpenses, setListExpenses] = useState([]);
-  useEffect(() => {
-    setListExpenses([...listExpenses, { category, ammount }]);
-  }, [ammount]);
   return (
     <div id="expense-data">
-      {listExpenses.map(
+      {/* {listExpenses.map(
         ([category, ammount],
         (idx) =>
           idx > 0 ? (
@@ -31,7 +28,34 @@ export default function ExpenseData({ category, ammount }) {
           ) : (
             ""
           ))
-      )}
+      )} */}
+      <div className="data">
+        <div className="title">
+          <h5>Food</h5>
+          <h5 className="price">৳50</h5>
+        </div>
+        <span>
+          <h6>{dateString}</h6>
+        </span>
+      </div>
+      <div className="data">
+        <div className="title">
+          <h5>Home Rent</h5>
+          <h5 className="price">৳50</h5>
+        </div>
+        <span>
+          <h6>2500</h6>
+        </span>
+      </div>
+      <div className="data">
+        <div className="title">
+          <h5>Mobile Recharge</h5>
+          <h5 className="price">৳39</h5>
+        </div>
+        <span>
+          <h6>2500</h6>
+        </span>
+      </div>
     </div>
   );
 }
