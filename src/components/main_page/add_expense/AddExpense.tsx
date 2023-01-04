@@ -38,10 +38,12 @@ export default function AddExpense() {
     setSST(calc_sst.toLocaleString("en-IN", { minimumFractionDigits: 2 }));
     setLST(calc_lst.toLocaleString("en-IN", { minimumFractionDigits: 2 }));
   }
+  const [totalDailyExpense, setTotalDailyExpense] = useState(Number);
   function calculateAddExpense() {
     setCategory(categoryValue);
     let exp_amnt = parseInt(inputExpenseAmmount);
-    setDailyExpense(parseInt(dailyExpense) + exp_amnt);
+    setTotalDailyExpense(totalDailyExpense + exp_amnt);
+    setDailyExpense(totalDailyExpense.toLocaleString("en-IN"));
     setExpenseAmmount(exp_amnt.toLocaleString("en-IN"));
   }
   return (

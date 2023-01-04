@@ -4,7 +4,7 @@ import { useState } from "react";
 import AddExpense from "../main_page/add_expense/AddExpense";
 export default function LoginPage() {
   const [isUserLoged, setIsUserLoged] = useState(false);
-  return !isUserLoged ? (
+  return isUserLoged ? (
     <AddExpense />
   ) : (
     <div id="login-page">

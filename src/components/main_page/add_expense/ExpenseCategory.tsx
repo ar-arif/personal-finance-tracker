@@ -31,7 +31,7 @@ export default function ExpenseCategory({ setCategoryValue }) {
             <MenuItem value={"Clothing"}>Clothing</MenuItem>
             <MenuItem value={"Gas Bill"}>Gas Bill</MenuItem>
             <MenuItem value={"WiFi Bill"}>WiFi Bill</MenuItem>
-            <MenuItem value={"Sim Recharge"}>Sim Recharge</MenuItem>
+            <MenuItem value={"Mobile Recharge"}>Mobile Recharge</MenuItem>
             <MenuItem value={"Others"}>Others</MenuItem>
           </Select>
         </FormControl>
